@@ -6,6 +6,8 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 
 
+//sass variables 
+
 *,
 *::before,
 *::after {
@@ -15,3 +17,5 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
 img {
   max-width: 100%;
 }
+
+
