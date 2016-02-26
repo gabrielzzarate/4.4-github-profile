@@ -5,10 +5,196 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
     <title>gabrielzzarate</title>
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   </head>
   <body>
 
-    <h1>Hello World!</h1>
+    <nav class="navbar navbar-default navbar-fixed-top header">
+  <div class="container nav-container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header col-md-12 ">
+        
+       <form class="navbar-form navbar-left" role="search">
+
+          <a class="github-icon" href=""><span><i class="fa fa-github"></i></span></a>
+         
+          <div class="form-group header-search-container">
+            
+            <form id="header-search"><input type="text" class="form-control" placeholder="Search GitHub">
+            </form>
+      
+
+        </div>
+        <ul class="nav navbar-nav nav-links">
+        <li><a href="#">Pull request <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Issues</a></li>
+        <li><a href="#">Gist</a></li>
+        </ul>
+        <div class="col-md-3 col-md-offset-2">
+        <ul class="nav navbar-nav navbar-right nav-links-right">
+          <li><a href="#"><i class="fa fa-bell"></i> <span class="sr-only">(current)</span></a></li>
+        <li><a href="#"><i class="fa fa-plus"></i><span class="caret"></span></a></li>
+        <li><a class="header-profile-image" href="#"><span class="caret"></span></a></li>
+        </ul>
+      </div>
+
+    </form>
+         
+
+        
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<div class="row main-content-body">
+  <div class="col-md-3 col-md-offset-1">
+    <div class="user-profile-image">
+        <!-- sidebar template populates here-->
+      
+    </div>
+  </div>
+
+
+    <div class="col-md-8">
+      <ul class="nav nav-tabs">
+          <li role="presentation"><a href="#"><i class="fa fa-plus-square-o"></i>Contributions</a></li>
+          <li role="presentation" class="active"><a href="#"><i class="fa fa-book"></i>Repositories</a></li>
+        <li role="presentation"><a href="#"><i class="fa fa-rss"></i>Public activity</a></li>
+
+
+        <button type="button" class="col-md-offset-3 btn btn-default edit-button"><i class="fa fa-pencil pencil-icon"></i>Edit profile</button>
+      </ul>
+      
+
+      <div class="repo-nav col-md-12">
+        <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Find a repository...">
+        </div>
+        <button type="submit" class="btn btn-default repo-search-button">Search</button>
+      </form>
+
+        <ul class="repo-nav-links">
+          <li><a href="">All</a></li>
+          <li><a href="">Public</a></li>
+          <li><a href="">Private</a></li>
+          <li><a href="">Sources</a></li>
+          <li><a href="">Forks</a></li>
+          <li><a href="">Mirrors</a></li>
+          <button type="button" class="btn btn-success new-repo-button"><i class="fa fa-book repo-book-icon"></i>New</button>
+        </ul>
+        
+      </div>
+
+      <div class="repo-content"> 
+          <!--repo template populates here -->
+
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+
+  <div class="row"> <!-- footer container -->
+  <div class="col-md-8 col-md-offset-2 ">
+    <footer>
+      <hr>
+      
+     
+      <ul class="footer-links-left navbar-left">
+        <li>&copy; 2016 GitHub, Inc.</li>
+        <li><a href="">Terms</a></li>
+        <li><a href="">Privacy</a></li>
+        <li><a href="">Security</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">Help</a></li>
+      </ul>
+        <span class="footer-icon"><i class="fa fa-github"></i></span>
+      <ul class="footer-links-right navbar-right">
+        <li><a href="">Status</a></li>
+        <li><a href="">API</a></li>
+        <li><a href="">Training</a></li>
+        <li><a href="">Shop</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Pricing</a></li>
+      </ul>
+    
+    </footer>
+   </div>
+</div>
+
+
+
+      <!--
+         ///////////////////////////////////////////////////////////////////////////////////
+        - - - - - - - - - - - - - - - - START HANDLEBARS TEMPLATES - - - - - - - - - - - - -
+         ///////////////////////////////////////////////////////////////////////////////////
+      -->
+     
+      <script id="sidebar-template" type="text/x-handlebars-template">
+        <span class="user-image"><img src="{{avatar_url}}" alt=""></span>
+        <div class="user-name-container">
+          <span class="user-name">{{name}}</span><br>
+          <span class="user-login">{{login}}</span>
+        </div>
+
+        <div class="location-container">
+          <i class="fa fa-map-marker map-icon"></i><span class="location">{{location}}</span><br>
+          <i class="fa fa-clock-o clock-icon"></i><span class="join-date">{{created_at}}</span>
+          </div>
+
+        <div class="followers-container">
+          <strong><a href="{{follower_url}}">{{followers}}</a></strong>
+          <span class="text-muted">Follower</span>
+          <strong><a href="{{starred_url}}">2</a></strong>
+          <span class="text-muted">Starred</span>
+          <strong><a href="{{following_url}}">{{following}}</a></strong>
+          <span class="text-muted">Following</span>
+        </div>
+
+      <div class="organizations-container">
+        <span class="organizations">Organizations</span><br>
+        <span class="organization-icon"><img alt="@tiy-greenville-frontend-2016-feb" class="avatar" height="42" src="https://avatars1.githubusercontent.com/u/16375347?v=3&amp;s=84" width="42"></span>
+      </div>
+    </script>
+
+      <script id="header-template" type="text/x-handlebars-template">
+
+
+          <span class="header-user-image"><img src="{{avatar_url}}" alt=""></span>
+      </script>
+
+      <script id="repo-template" type="text/x-handlebars-template">
+
+      {{#each repoData}}
+        <div class="repo-container">
+          <span class="repo-name">{{name}}</span>
+          <div class="col-md-offset-10 language-info"><span>{{language}}</span><span><a href="{{stargazers_url}}"><i class="fa fa-star"></i></a>{{stargazers_count}}</span><span><a href="{{forks_url}}"><i class="fa fa-code-fork"></i></a>{{forks_count}}</span><br></div>
+          <span class="repo-description">{{description}}</span><br>
+          <span class="repo-update">{{updated_at}}</span>
+
+        </div>
+
+      {{/each}}
+      
+
+
+      </script>
+      
+     <a href=""></a>
+        
+      <!--
+         ///////////////////////////////////////////////////////////////////////////////////
+        - - - - - - - - - - - - - - - - END HANDLEBARS TEMPLATES - - - - - - - - - - - - -
+         ///////////////////////////////////////////////////////////////////////////////////
+      -->
+      
 
     <script src="js/bundle.js"></script>
   </body>
