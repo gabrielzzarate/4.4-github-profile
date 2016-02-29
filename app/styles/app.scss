@@ -31,7 +31,7 @@ img {
 }
 
 .nav-container {
-	max-width: 78%;
+	max-width: 80%;
 }
 
 .github-icon {
@@ -60,19 +60,21 @@ img {
 
 .nav-links li{
 	display: block;
-    padding: 4px 8px;
-    font-size: 13px;
-    font-weight: bold;
-    line-height: 20px;
-    color: #333;
-}
-
-.nav-links-right {
-	display: block;
     padding: 4px;
     font-size: 13px;
     font-weight: bold;
     line-height: 20px;
+    color: #333;
+
+}
+
+.nav-links-right {
+
+	display: block;
+    //padding: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    //line-height: 20px;
     color: rgb(50, 51, 51);
 }
 
@@ -82,13 +84,15 @@ img {
     line-height: 1;
     vertical-align: middle;
     border-radius: 3px;
+
+    a {
+    	padding: 0px;
+    }
 }
 
 // end of header//
 
-.main-content-body {
-	padding: 80px;
-}
+
 // begin sidebar//
 
 .user-image {
@@ -99,6 +103,7 @@ img {
     line-height: 1;
     vertical-align: middle;
     border-radius: 3px;
+    float: right;
 
 }
 
@@ -106,6 +111,8 @@ img {
 	border-bottom: 1px #e5e5e5 solid;
 	padding-top: 15px;
    	padding-bottom: 15px;
+   	width: 230px;
+   	float: right;
 
 	.user-name {
 		font-size: 26px;
@@ -130,9 +137,11 @@ img {
 }
 
 .location-container {
+	float: right;
 	border-bottom: 1px #e5e5e5 solid;
 	padding-top: 15px;
    	padding-bottom: 15px;
+   	width: 230px;
 	.map-icon {
 		font-size: 16px;
     	
@@ -158,17 +167,32 @@ img {
 
 
 .followers-container {
+	float: right;
 	border-bottom: 1px #e5e5e5 solid;
-	padding-top: 15px;
-   	padding-bottom: 15px;
-	strong {
-		margin: 0 auto;
-		padding-right: 30px;
+	width: 230px;
+	//padding-top: 10px;
+   //	padding-bottom: 10px;
+
+   	ul {
+   		//text-align: center;
+   	}
+	
+	li {
+		list-style: none;
+		display: inline-block;
+		margin-right: 8px;
+
+	}
+
+	h1 {
+		text-align: center;
+	}
+	a {
+		
+		
 		font-size: 28px;
     	font-weight: bold;
     	line-height: 1;
-	}
-	a {
 		color: #4078c0;
 		font-size: 28px;
     	font-weight: bold;
@@ -177,7 +201,7 @@ img {
     	
 	}
 
-	.text-muted {
+	.text-muted p {
 		
 		color: #767676;
 		font-size: 11px;
@@ -188,9 +212,11 @@ img {
 
 
 .organizations-container {
-
+	float: right;
+	width: 230px;
 	padding-top: 15px;
    	padding-bottom: 15px;
+   	margin-right: 0;
 
 
 	.organizations {
@@ -213,17 +239,30 @@ img {
 //begin main -content
 /////////////////////
 
+.main-body {
+	max-width: 60%;
+}
+
 .repo-nav {
+	margin-bottom: 18px;
 	border-bottom: 1px #e5e5e5 solid;
+
+}
+.repo-nav-tabs a{
+	color: #666;;
+
 }
 .pencil-icon {
 	margin-right: 5px;
 }
 .edit-button {
 	font-weight: bold;
+	position: relative;
+	right: -20px;
 }
 
 .repo-search-button {
+	margin-left: 6px;
 	position: relative;
     display: inline-block;
     padding: 6px 12px;
@@ -250,7 +289,7 @@ img {
     	text-align: -webkit-match-parent;
 	}
 
-	.repo-book-icon {
+	.repo-book-icon span{
 		margin-right: 2px;
 	}
 	.new-repo-button {
@@ -302,11 +341,12 @@ img {
     	font-weight: bold;
     	padding: 
 
-    	i {
+    	a {
     		color: #888;
 
     	}
 	}
+
 }
 
 
@@ -316,7 +356,7 @@ img {
 .footer-icon {
 	color: #888;
 	font-size: 20px;
-	padding-left: 15px;
+	margin-left: 19px;
 }
 
 .footer-links-left {

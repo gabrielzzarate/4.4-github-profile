@@ -2,6 +2,7 @@ var $ = require('jquery');
 var _ = require('underscore');
 var handlebars = require('handlebars');
 var githubtoken = require('./githubtoken.js').token;
+var moment = require('moment');
 
 //global variables
 
@@ -90,13 +91,22 @@ mostRecentRepo(repoData);
 
 function mostRecentRepo(repoData) {
 
-var repoData = _.sortBy(repoData, function(repoData){
+repoData = _.sortBy(repoData, function(repoData){
 
 		return repoData.pushed_at;
 
 	});
 
-	repoData.reverse();
+repoData.reverse();
+
+
+	
+repoData = _.map(repoData, function(repoData){
+		var formattedDate = new Date(repoData.pushed_at);
+		repoData.pushed_at = moment(formattedDate).startOf('hours').fromNow();
+		return repoData;
+
+	});
 	return repoData;
 }
 
